@@ -17,8 +17,12 @@
 </head>
 <div id="title"><h1> JDBC JSTL & JSP Database interaction</h1></div>
 <body>
+<a href="index.jsp">index</a>
+<a href="conditional.jsp">conditional</a>
+<a href="arithmetic.jsp">arithmetic</a>
+<a href="JDBC.jsp">Java Database connection</a>
 
-
+<%-- form to send values via POST metod. action redirects to authentication page --%>
 <form method="POST" action="loginAuthenticator.jsp">
     <input type="text" name="uname">
     <input type="text" name="password">

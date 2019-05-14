@@ -14,7 +14,9 @@
     <title>Logout</title>
 </head>
 <body>
+        <%-- destroy session upon logging out --%>
         <% session.removeAttribute("userLogin"); %>
+        <%-- redirect to login page --%>
         <c:redirect url="AdminLogin.jsp"/>
 </body>
 </html>

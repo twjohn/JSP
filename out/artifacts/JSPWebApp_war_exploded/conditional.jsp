@@ -19,6 +19,7 @@
         Links to other pages</br>
         <a href="index.jsp">index</a>
         <a href="arithmetic.jsp">arithmetic</a>
+        <a href="JDBC.jsp">Java Database Connection</a>
     </p>
     <h1>This is a if statement</h1>
     <p class="conditional">

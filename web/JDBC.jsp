@@ -17,20 +17,29 @@
 </head>
 <div id="title"><h1> JDBC JSTL & JSP Database interaction</h1></div>
 <body>
+<a href="index.jsp">index</a>
+<a href="conditional.jsp">conditional</a>
+<a href="arithmetic.jsp">arithmetic</a>
 <p>Search for games and find out their release dates and their sequels</p>
 
 <form method="POST">
     <input type="text" name="search">
     <input type="submit" value="Search">
 </form>
+
+<%-- Establish connection to database --%>
 <sql:setDataSource var="con" driver="com.mysql.cj.jdbc.Driver" url="jdbc:mysql://localhost:3306/mydb" user="root" password=""/>
 
+<%-- Check for a post --%>
 <c:if test="${pageContext.request.method=='POST'}">
-    <sql:query var="result" sql="Select * from games" dataSource="${con}"/>
-<c:forEach var="row" items="${result.rows}">
-    <p><c:out value="Results"/></p>
-        <c:choose>
-            <c:when test="${param.search == row.title}">
+    <%-- create a query --%>
+    <sql:query var="result" dataSource="${con}">
+        Select * from games where title = '${param.search}'
+    </sql:query>
+<%-- loop through results and display the rows --%>
+    <c:forEach var="row" items="${result.rows}">
+        <p><c:out value="Results"/></p>
+            <%-- Displays results based upon the results from the query... places in table format --%>
                 <table>
                     <tr>
                         <th>Title</th>
@@ -45,10 +54,7 @@
                         <td><c:out value="${row.sequel}"/></td>
                     </tr>
                 </table>
-            </c:when>
-        </c:choose>
-
-</c:forEach>
+    </c:forEach>
 </c:if>
 
 </body>

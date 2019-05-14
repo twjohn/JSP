@@ -19,13 +19,14 @@
         Links to other pages</br>
         <a href="index.jsp">index</a>
         <a href="conditional.jsp">conditional</a>
+        <a href="JDBC.jsp">Java Database Connection</a>
     </p>
     <h1>This is some arithmetic</h1>
 
     </p>
 
     <p class="arithmetic">
-        <c:if test="${pageContext.request.method=='POST'}">
+        <c:if test="${pageContext.request.method=='GET'}">
             <fmt:parseNumber var="mathVal1" type="number" value="${param.mathVal1}"/>
             <fmt:parseNumber var="mathVal2" type="number" value="${param.mathVal2}"/>
 
@@ -108,7 +109,7 @@
         </c:if>
     </p>
 
-    <form method="post">
+    <form method="get">
         <input type="number" name="mathVal1" placeholder="Number 1">
         <select name="op">
             <option value="+" selected>+</option>

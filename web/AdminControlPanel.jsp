@@ -16,11 +16,15 @@
 </head>
 <div id="title"><h1> JDBC JSTL & JSP Database interaction</h1></div>
 <body>
+        <%-- checks session scope for a empty value. if it is empty, redirect to login page --%>
         <c:if test="${empty sessionScope['userLogin']}">
+            <%-- redirect to login page --%>
             <c:redirect url="AdminLogin.jsp"/>
         </c:if>
 
+        <%-- display the session variable value and give option to logout --%>
         <c:out value="Welcome ${sessionScope['userLogin']}"/>
+        <%-- logout button that redirects to logout file --%>
         <a href="logout.jsp"><input type="button" value="Logout"></a>
 </body>
 </html>

@@ -45,4 +45,7 @@ form{
 table, th, tr, td{
     border: solid 1px #000000;
 }
+a{
+    font-size: 50px;
+}
 
