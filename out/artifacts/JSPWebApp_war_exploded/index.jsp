@@ -14,11 +14,13 @@
     <link rel="stylesheet" type="text/css" href="jspStylesheet.css">
   </head>
   <body>
-    <p>
-      <h1> JSP With JSTL Testing Grounds</h1>
+
+      <div id="title"><h1> JSP With JSTL Testing Grounds</h1></div>
+      <p>
       Links to other pages</br>
       <a href="arithmetic.jsp">arithmetic</a>
       <a href="conditional.jsp">conditional</a>
+      <a href="JDBC.jsp">Java Database Connection</a>
     </p>
     <hr>
   </body>

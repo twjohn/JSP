@@ -14,36 +14,37 @@
     <link rel="stylesheet" type="text/css" href="jspStylesheet.css">
 </head>
 <body>
+<div id="title"><h1>JSP with JSTL Testing Grounds</h1></div>
     <p>
-        <h1>JSP with JSTL Testing Grounds</h1>
         Links to other pages</br>
         <a href="index.jsp">index</a>
         <a href="arithmetic.jsp">arithmetic</a>
     </p>
-    <p>
-        <h1>This is a if statement</h1>
+    <h1>This is a if statement</h1>
+    <p class="conditional">
         <%-- IF & CHOOSE STATEMENT TESTING JSTL --%>
         <c:if test="${pageContext.request.method=='POST'}">
 
-        <p>The value submitted was <c:out value="${param.num1}"/></p>
+        <c:out value="The value submitted was ${param.num1}"/>
+
         </br>
 
         <c:choose>
 
             <c:when test="${param.num1=='1'}">
-                This will be visible if the value was exactly 1...
+                <c:out value="This will be visible if the value was exactly 1..."/>
             </c:when>
 
             <c:when test="${param.num1=='1000'}">
-                This will be visible if the value was exactly 1000...
+                <c:out value="This will be visible if the value was exactly 1000..."/>
             </c:when>
 
             <c:when test="${param.num1==''}">
-                No value was entered...
+                <c:out value="No value was entered..."/>
             </c:when>
 
             <c:otherwise>
-                This will be visible if the value was anything but 1 and 1000...
+                <c:out value="This will be visible if the value was anything but 1 and 1000..."/>
             </c:otherwise>
 
         </c:choose>

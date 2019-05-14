@@ -13,9 +13,9 @@
     <title>arithmetic</title>
     <link rel="stylesheet" type="text/css" href="jspStylesheet.css">
 </head>
-<body>
+
+<div id="title"><h1> JSP With JSTL Testing Grounds</h1></div>
     <p>
-        <h1> JSP With JSTL Testing Grounds</h1>
         Links to other pages</br>
         <a href="index.jsp">index</a>
         <a href="conditional.jsp">conditional</a>
@@ -24,7 +24,7 @@
 
     </p>
 
-    <p>
+    <p class="arithmetic">
         <c:if test="${pageContext.request.method=='POST'}">
             <fmt:parseNumber var="mathVal1" type="number" value="${param.mathVal1}"/>
             <fmt:parseNumber var="mathVal2" type="number" value="${param.mathVal2}"/>
